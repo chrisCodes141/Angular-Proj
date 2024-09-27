@@ -1,0 +1,32 @@
+<section class="container">
+    <div class="card" *ngIf="enterCardArea">
+        <div class="card-header">
+            <h2>Add Card #</h2>
+        </div>
+        <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <input type="number" formControlName="card" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.card.errors }" />
+                <div *ngIf="submitted && f.card.errors" class="invalid-feedback">
+                    <div *ngIf="f.card.errors.required">Card # required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="addCard()">Add Card</button>
+            </div>
+        </form>
+    </div>
+
+    <div *ngIf="cardList?.length>0 && !enterCardArea">
+        <button (click)="toggleCard()" type="button" routerLink="/home/card" class="btn btn-outline-primary">Add New Card</button>
+        <div class="card cardCard" *ngFor="let num of cardList;let i=index">
+            <div class="card-body">
+                <h5 class="card-title">Card: {{i+1}}</h5>
+                <p class="card-text">{{num.card}}</p>
+                <div>
+                    <button type="button" class="btn btn-outline-primary" (click)="editCard(i)">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteCard(i)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,12 @@
+.card{
+    margin:100px;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+}
+
+.about{
+    margin:50px;
+}

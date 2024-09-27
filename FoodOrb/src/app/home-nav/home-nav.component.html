@@ -1,0 +1,24 @@
+<div>
+    <nav class="navbar navbar-light navbar-expand-lg bg-light">
+        <a class="navbar-brand title" routerLink="/home/food">Food orb</a>
+        <section>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home/cart">Cart</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Welcome
+                    </a>
+                    <span class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" routerLink="/home/track">Track Order</a>
+                        <a class="dropdown-item" routerLink="/home/profile">Profile</a>
+                        <a class="dropdown-item" routerLink="/home/settings">Settings</a>
+                        <a class="dropdown-item" routerLink="/login">Logout</a>
+                    </span>
+                </li>
+            </ul>
+        </section>
+    </nav>
+    <router-outlet></router-outlet>
+</div>

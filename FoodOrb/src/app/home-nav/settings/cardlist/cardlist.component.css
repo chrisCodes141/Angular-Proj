@@ -1,0 +1,9 @@
+.container{
+    display:flex;
+    margin-top:5%;
+    flex-direction: row;
+}
+
+.card{
+    width:500px;
+}
